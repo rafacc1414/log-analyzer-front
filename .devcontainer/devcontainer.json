@@ -1,0 +1,17 @@
+{
+	"name": "Node.js & TypeScript",
+	"dockerComposeFile" : "compose.yml",
+	"service": "log-analyzer-front",
+	"workspaceFolder": "/code/dev",
+	"extensions": [
+		"dbaeumer.vscode-eslint",
+		"angular.ng-template",
+		"johnpapa.angular2",
+		"sibiraj-s.vscode-scss-formatter",
+		"gruntfuggly.todo-tree",
+		"nrwl.angular-console",
+		"meganrogge.template-string-converter",
+		"mhutchie.git-graph"
+	],
+	"containerUser": "dev"
+}
