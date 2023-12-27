@@ -1,0 +1,11 @@
+
+#file-drop {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  #file-drop.dragover {
+    background-color: #f0f8ff; /* Light Blue */
+  }
