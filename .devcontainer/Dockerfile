@@ -13,6 +13,9 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:1-${VARIANT}
 # [Optional] Uncomment if you want to install more global node modules
 RUN su node -c "npm install -g @angular/cli npm"
 
+RUN apt-get update && apt-get install -y protobuf-compiler
+RUN su node -c "npm install -g ts-protoc-gen @improbable-eng/grpc-web @types/google-protobuf google-protobuf npm"
+
 ENV DEV_PATH=/code/dev
 WORKDIR $DEV_PATH
 

@@ -10,6 +10,7 @@ services:
     container_name: devcontainer-log-analyzer-front
     command: sleep infinity
     volumes:
+      - ../../proto/:/code/dev/proto/
       - ../:/code/dev
       - ~/.gitconfig/:/home/dev/.gitconfig
     user: dev

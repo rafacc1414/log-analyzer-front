@@ -28,6 +28,32 @@ export class FileDropComponent {
     const files = event.dataTransfer?.files;
     if (files) {
       this.filesDropped.emit(files);
+      this.handleDroppedFiles(files);
     }
+  }
+
+  private handleDroppedFiles(files: FileList): void {
+    for (let i = 0; i < files.length; i++) {
+      const file = files.item(i);
+      if (file) {
+        this.readAndLogFileContent(file);
+      }
+    }
+  }
+
+  private readAndLogFileContent(file: File): void {
+    const reader = new FileReader();
+
+    // reader.onload = (event) => {
+    //   const content = event.target?.result;
+    //   console.log(`File "${file.name}" content:`, content);
+    //   // Puedes enviar el contenido al servidor aquí
+    //   this.fileUploadService.uploadFile(file).then(response => {
+    //     console.log(`File "${file.name}" uploaded successfully. Server response:`, response);
+    //   }).catch(error => {
+    //     console.error(`Error uploading file "${file.name}":`, error);
+    // };
+
+    reader.readAsText(file);
   }
 }
