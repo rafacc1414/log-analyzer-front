@@ -11,6 +11,11 @@ export class WebSocketService {
   private socket: WebSocket;
 
   constructor() {
+    /* Fix "Web Socket is not defined" */
+    if (typeof global !== 'undefined') {
+      global.WebSocket = require('ws');
+    }
+
     this.socket = new WebSocket('wss://localhost:3000');
   }
 
@@ -28,7 +33,7 @@ export class WebSocketService {
 
   // Método para enviar archivos de logs
   sendLogsFile(file: File) {
-      this.socket.send(file);
+    this.socket.send(file);
   }
 
 }
