@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { FileDropComponent } from './file-drop/file-drop.component';
 import { WebSocketService } from './web-socket/web-socket.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FileDropComponent],
+  imports: [CommonModule, RouterOutlet, FileDropComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -22,8 +23,8 @@ export class AppComponent {
   
   ngOnInit(): void {
     this.webSocketService.connect().subscribe(
-      (message) => {
-        this.messages.push(message);
+      (msg) => {
+        this.messages.push(msg);
       },
       (error) => {
         console.error(error);
@@ -45,6 +46,5 @@ export class AppComponent {
       this.webSocketService.sendLogsFile(file);
     });
   }
-
 
 }

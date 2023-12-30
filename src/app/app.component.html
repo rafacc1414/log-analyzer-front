@@ -8,6 +8,12 @@
     </ul>
   </div>
 
+  <div>
+    <label for="inputText">Ingrese un texto:</label>
+    <input type="text" id="inputText" [(ngModel)]="message" />
+  </div>
+  <button (click)="sendMessage()">Send Message</button>
+
   <div *ngFor="let message of messages">
     {{ message }}
   </div>
