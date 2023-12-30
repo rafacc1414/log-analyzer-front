@@ -16,6 +16,18 @@
         "default",
         "^production"
       ]
+    },
+    "ng": {
+      "cache": true
+    },
+    "start": {
+      "cache": true
+    },
+    "watch": {
+      "cache": true
+    },
+    "serve:ssr:log-analyzer-front": {
+      "cache": true
     }
   },
   "affected": {
@@ -33,5 +45,5 @@
       "!{projectRoot}/**/*.spec.[jt]s"
     ]
   },
-  "nxCloudAccessToken": "YzlmYmQxZjctMGJiYy00NTFlLThlNjgtYWFjZTI3Mjg4OTEyfHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "NDJjMTY1YmMtMGJmZS00NThlLTkwNWUtY2YzNDA0NjRhMjEzfHJlYWQtd3JpdGU="
 }
